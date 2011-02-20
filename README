@@ -20,3 +20,6 @@ RC File
 
 email=your@email.address
 password=yourPassword
+
+To Do:
+	* Fix error handling

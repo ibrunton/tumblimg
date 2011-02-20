@@ -32,12 +32,8 @@ $form{title} = $k->inputbox( text => "Enter a title for the post:" ) || '';
 $form{caption} = $k->inputbox( text => "Enter a caption for the photo:" ) || '';
 $form{tags} = $k->inputbox( text => "Comma-separated list of tags:" ) || '';
 
-foreach (sort keys %form ) {
-    print "$_: $form{$_}\n";
-}
-
-my $curl = new LWP::UserAgent;
-$curl->default_header( 'Content-Type' => 'form-data' );
+my $ua = new LWP::UserAgent;
+$ua->default_header( 'Content-Type' => 'form-data' );
 
 my $buffer;
 open( FILE, $filename ) || die();
@@ -47,7 +43,7 @@ while ( read( FILE, $buffer, 65536 ) ) {
 }
 close( FILE );
 
-my $response = $curl->post( $url, \%form );
+my $response = $ua->post( $url, \%form );
 
 if ( $response->is_success ) {
     $k->msgbox( text => 'Successfully posted to Tumblr!' );
