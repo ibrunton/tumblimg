@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin,image/*
+ServiceTypes=image/*
+Actions=postImageToTumblr
+
+[Desktop Action postImageToTumblr]
+Name=Post this Image to Tumblr
+Exec=tumblimg.pl %f

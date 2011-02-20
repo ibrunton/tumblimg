@@ -1,0 +1,22 @@
+Post Image to Tumblr
+
+Perl script and KDE Service Menu
+
+This tool allows KDE users to post an image to Tumblr by
+right-clicking on the image file in Konqueror or Dolphin. The script
+will prompt for additional information and then post the file to
+Tumblr.
+
+Installation
+	* Place tumblimg.pl in a directory in your $PATH.
+	* Make it executable (chmod +x tumblimg.pl).
+	* Place tumbling.desktop in your KDE Service Menus directory
+	  ( ~/.kde4/share/kde4/services/ServiceMenus/ or something
+	  similar)
+
+RC File
+	To avoid being prompted every time for your email address
+	and password, create a file at ~/.tumblrrc with these lines:
+
+email=your@email.address
+password=yourPassword
