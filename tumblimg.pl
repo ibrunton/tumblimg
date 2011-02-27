@@ -9,7 +9,9 @@ my $url = 'http://www.tumblr.com/api/write';
 
 my $filename = shift( @ARGV ) || die();
 
-my %form = ( 'type' => 'photo' );
+my %form = ( 'type' => 'photo',
+    'generator' => 'tumblimg.pl by Ian D. Brunton' );
+
 my $k = new UI::Dialog::Backend::KDialog( backtitle => 'Default', title => 'Tumblr' );
 
 my $rcfile = $ENV{HOME} . "/.tumblrrc";
